@@ -70,20 +70,20 @@ body {
     text-decoration: none !important;
 }
 
-  .delete-icon {
+.delete-icon {
     color: var(--mainRed);
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none !important;
-  }
+}
 
-  .edit-icon:hover {
+.edit-icon:hover {
     color: var(--mainBlue);
-  }
+}
 
-  .delete-icon:hover {
+.delete-icon:hover {
     color: var(--mainRed);
-  }
+}
 
 .showItem {
     display: block;
@@ -116,11 +116,11 @@ body {
 
 .showRed {
     color: var(--mainRed);
-  }
+}
 
 .showGreen {
     color: var(--mainGreen);
-  }
+}
 
 .showBlack {
     color: var(--mainDark);
@@ -129,7 +129,7 @@ body {
 @media screen and (min-width: 992px) {
 
 .budget {
-      font-size: 2.6rem;
+    font-size: 2.6rem;
     color: var(--mainGreen);
 }
 
@@ -139,7 +139,7 @@ font-size: 2.6rem;
 }
 
 .balance {
-      font-size: 2.6rem;
+    font-size: 2.6rem;
 }
 
 .budget-icon,
@@ -148,13 +148,13 @@ font-size: 2.6rem;
         font-size: 3.5rem;
         color: var(--mainBlue);
     }
-  }
+}
 
-  .list-item {
+.list-item {
 flex: 0 0 33.33%;
 text-align: center;
-  }
-  
+}
+
 .expense-item {
     height: 2rem;
-  }
+}
