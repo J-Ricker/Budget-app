@@ -62,8 +62,8 @@ class UI {
             }, 3000)
         } else {
             let amount = parseInt(amountValue);
-            this.expenseInput = '';
-            this.amountInput = '';
+            this.expenseInput.value = '';
+            this.amountInput.value = '';
 
             let expense = {
                 id: this.itemID,
@@ -73,7 +73,7 @@ class UI {
             this.itemID++;
             this.itemList.push(expense);
             this.addExpense(expense);
-            // showBalance();
+            this.showBalance();
         }
     }
     // add expense
@@ -82,8 +82,8 @@ class UI {
         div.classList.add('expense');
         div.innerHTML=`
             <div class="expense-item d-flex justify-content-between align-items-baseline">
-                    <h6 class="expense-title mb-0 text-uppercase list-item">- title</h6>
-                    <h5 class="expense-amount mb-0 list-item">amount</h5>
+                    <h6 class="expense-title mb-0 text-uppercase list-item">${expense.title}</h6>
+                    <h5 class="expense-amount mb-0 list-item">${expense.amount}</h5>
                     <div class="expense-icons list-item">
                     <a href="#" class="edit-icon mx-2" data-id="${expense.id}">
                     <i class="fas fa-edit"></i>
@@ -94,11 +94,19 @@ class UI {
                     </div>
             </div>
         `;
+        this.expenseList.appendChild(div);
     }
 
     // total expense
     totalExpense() {
-        let total = 400;
+        let total = 0;
+        if (this.itemList.length > 0) {
+            total = this.itemList.reduce(function (acc, curr) {
+                acc += curr.amount;
+                return acc;
+            }, 0)
+        }
+        this.expenseAmount.textContent = total;
         return total;
     }
 }
